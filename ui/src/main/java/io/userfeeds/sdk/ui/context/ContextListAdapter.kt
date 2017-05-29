@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import io.userfeeds.sdk.core.context.ShareContext
 import io.userfeeds.sdk.ui.R
 
-class ContextListAdapter(private val contexts: List<ShareContext>, private val onContextSelect: (ShareContext) -> Unit) : RecyclerView.Adapter<ContextListAdapter.Holder>() {
+internal class ContextListAdapter(private val contexts: List<ShareContext>, private val onContextSelect: (ShareContext) -> Unit) : RecyclerView.Adapter<ContextListAdapter.Holder>() {
 
     override fun getItemCount() = contexts.size
 
