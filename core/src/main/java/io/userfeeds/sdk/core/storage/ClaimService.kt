@@ -3,7 +3,7 @@ package io.userfeeds.sdk.core.storage
 import io.reactivex.Completable
 import io.userfeeds.sdk.core.context.ShareContext
 
-fun putClaim(
+internal fun putClaimImpl(
         shareContext: ShareContext,
         type: List<String>,
         target: String,

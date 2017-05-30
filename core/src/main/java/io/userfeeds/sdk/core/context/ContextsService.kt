@@ -3,7 +3,7 @@ package io.userfeeds.sdk.core.context
 import io.reactivex.Single
 import io.userfeeds.sdk.core.common.map
 
-fun getContexts(): Single<List<ShareContext>> {
+internal fun getContextsImpl(): Single<List<ShareContext>> {
     return ContextsApiProvider.get()
             .call()
             .map(::toShareContextList)
