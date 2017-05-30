@@ -5,8 +5,8 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.userfeeds.sdk.core.UserfeedsService
 import io.userfeeds.sdk.core.context.ShareContext
-import io.userfeeds.sdk.core.context.getContexts
 import io.userfeeds.sdk.ui.R
 import kotlinx.android.synthetic.main.userfeeds_contexts_activity.*
 
@@ -16,7 +16,7 @@ class ContextsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.userfeeds_contexts_activity)
         setSupportActionBar(userfeeds_toolbar)
-        getContexts()
+        UserfeedsService.get().getContexts()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::onContexts, this::onError)
     }
