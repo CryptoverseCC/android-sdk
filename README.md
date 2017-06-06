@@ -37,7 +37,7 @@ class MyAwesomeApp : Application() {
 
 Go to [UserfeedsService.kt](https://github.com/Userfeeds/android-sdk/blob/master/core/src/main/java/io/userfeeds/sdk/core/UserfeedsService.kt) for a list of these methods.
 
-# Example
+### Example
 
 ```
 class ContextsActivity : AppCompatActivity() {
