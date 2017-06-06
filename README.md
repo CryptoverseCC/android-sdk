@@ -10,7 +10,7 @@ Go to https://api.userfeeds.io/portal/apis/, register and receive key.
 
 ### Add dependecy
 
-```
+```groovy
 dependencies {
     compile 'io.userfeeds.sdk:core:<latest version here>'
 }
@@ -22,7 +22,7 @@ You may find the latest version number by going to [maven central search](http:/
 
 You will usually init the SDK in a class extending `Application`.
 
-```
+```kotlin
 class MyAwesomeApp : Application() {
 
     override fun onCreate() {
@@ -39,7 +39,7 @@ Go to [UserfeedsService.kt](https://github.com/Userfeeds/android-sdk/blob/master
 
 ### Example
 
-```
+```kotlin
 class ContextsActivity : AppCompatActivity() {
     
     private lateinit var disposable: Disposable
