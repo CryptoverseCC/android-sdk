@@ -6,6 +6,6 @@ import retrofit2.http.Path
 
 internal interface RankingApi {
 
-    @GET("ranking/{context}/{algorithm}")
+    @GET("ranking/{context}/{algorithm}/")
     fun call(@Path("context") context: String, @Path("algorithm") algorithm: String): Single<RankingResponse>
 }
