@@ -12,7 +12,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.math.BigDecimal
 
-internal object AbstractRetrofitProvider : Provider<Retrofit>({
+internal object RetrofitProvider : Provider<Retrofit>({
     Retrofit.Builder()
             .baseUrl("https://api.userfeeds.io/beta/api/")
             .client(OkHttpClient.Builder()
