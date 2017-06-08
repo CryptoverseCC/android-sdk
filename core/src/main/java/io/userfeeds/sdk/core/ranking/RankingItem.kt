@@ -3,6 +3,7 @@ package io.userfeeds.sdk.core.ranking
 import android.os.Parcel
 import android.os.Parcelable
 import io.userfeeds.sdk.core.common.parcelableCreator
+import io.userfeeds.sdk.core.common.readSerializableEx
 import java.math.BigDecimal
 
 data class RankingItem(
@@ -28,7 +29,7 @@ data class RankingItem(
         val CREATOR = parcelableCreator {
             RankingItem(
                     readString(),
-                    readSerializable() as BigDecimal,
+                    readSerializableEx(),
                     readString(),
                     readString()
             )
