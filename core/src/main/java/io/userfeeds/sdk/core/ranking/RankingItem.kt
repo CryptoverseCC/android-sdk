@@ -3,11 +3,13 @@ package io.userfeeds.sdk.core.ranking
 import android.os.Parcel
 import android.os.Parcelable
 import io.userfeeds.sdk.core.common.parcelableCreator
+import java.math.BigDecimal
 
 data class RankingItem(
         val target: String,
-        val score: Double,
-        val title: String)
+        val score: BigDecimal,
+        val title: String?,
+        val summary: String?)
     :
         Parcelable {
 
@@ -15,8 +17,9 @@ data class RankingItem(
 
     override fun writeToParcel(dest: Parcel, flags: Int) {
         dest.writeString(target)
-        dest.writeDouble(score)
+        dest.writeSerializable(score)
         dest.writeString(title)
+        dest.writeString(summary)
     }
 
     companion object {
@@ -25,7 +28,8 @@ data class RankingItem(
         val CREATOR = parcelableCreator {
             RankingItem(
                     readString(),
-                    readDouble(),
+                    readSerializable() as BigDecimal,
+                    readString(),
                     readString()
             )
         }
