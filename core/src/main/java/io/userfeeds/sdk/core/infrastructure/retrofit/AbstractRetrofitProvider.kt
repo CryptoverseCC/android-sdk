@@ -1,6 +1,5 @@
 package io.userfeeds.sdk.core.infrastructure.retrofit
 
-import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.squareup.moshi.Moshi
 import io.reactivex.schedulers.Schedulers
 import io.userfeeds.sdk.core.UserfeedsSdk
@@ -9,6 +8,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import okhttp3.logging.HttpLoggingInterceptor.Level.BODY
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.math.BigDecimal
 
