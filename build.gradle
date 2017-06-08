@@ -5,6 +5,7 @@ buildscript {
     ext.build_time_tracker_plugin_version = '0.10.0'
     repositories {
         jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.2'
@@ -24,6 +25,7 @@ buildtimetracker.reporters {
 allprojects {
     repositories {
         jcenter()
+        mavenCentral()
     }
 }
 
