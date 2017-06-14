@@ -5,6 +5,7 @@ object UserfeedsSdk {
     internal lateinit var apiKey: String
     internal var debug: Boolean = false
 
+    @JvmStatic
     fun initialize(apiKey: String, debug: Boolean = false) {
         this.apiKey = apiKey
         this.debug = debug
