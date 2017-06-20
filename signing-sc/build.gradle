@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 8
-        versionName "0.0.8"
+        versionCode 9
+        versionName "0.0.9"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -28,3 +28,5 @@ dependencies {
     compile 'com.madgag.spongycastle:prov:1.56.0.0'
     testCompile 'junit:junit:4.12'
 }
+
+apply from: '../gradle/upload-archives.gradle'

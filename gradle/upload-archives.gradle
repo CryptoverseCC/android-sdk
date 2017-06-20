@@ -2,7 +2,7 @@ apply plugin: 'maven'
 apply plugin: 'signing'
 
 group = 'io.userfeeds.sdk'
-version = '0.0.8'
+version = '0.0.9'
 
 if (System.env.CI != "true") {
 
