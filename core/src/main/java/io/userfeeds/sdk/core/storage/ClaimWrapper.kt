@@ -1,15 +1,22 @@
 package io.userfeeds.sdk.core.storage
 
-internal data class ClaimWrapper(
+data class ClaimWrapper(
+        val context: String,
+        val type: List<String>,
+        val claim: Claim,
+        val credits: List<Credit>
+)
+
+internal data class SignedClaimWrapper(
         val context: String,
         val type: List<String>,
         val claim: Claim,
         val credits: List<Credit>,
-        val signature: Signature
+        val signature: ClaimSignature
 )
 
-internal data class Claim(val target: String, val labels: List<String>?)
+data class Claim(val target: String, val labels: List<String>?)
 
-internal data class Credit(val type: String, val value: String)
+data class Credit(val type: String, val value: String)
 
-data class Signature(val type: String, val creator: String, val signatureValue: String)
+data class ClaimSignature(val type: String, val creator: String, val signatureValue: String)

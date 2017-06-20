@@ -5,7 +5,7 @@ import io.reactivex.Single
 import io.userfeeds.sdk.core.algorithm.Algorithm
 import io.userfeeds.sdk.core.context.ShareContext
 import io.userfeeds.sdk.core.ranking.RankingItem
-import io.userfeeds.sdk.core.storage.Signature
+import io.userfeeds.sdk.core.signing.KeyPairHex
 
 interface UserfeedsService {
 
@@ -21,7 +21,7 @@ interface UserfeedsService {
             target: String,
             labels: List<String>?,
             client: String,
-            signature: Signature): Completable
+            keyPairHex: KeyPairHex): Completable
 
     companion object {
 

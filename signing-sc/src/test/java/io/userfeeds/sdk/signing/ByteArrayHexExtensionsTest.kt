@@ -1,6 +1,7 @@
 package io.userfeeds.sdk.signing
 
-import org.junit.Assert.*
+import org.junit.Assert.assertArrayEquals
+import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class ByteArrayHexExtensionsTest {

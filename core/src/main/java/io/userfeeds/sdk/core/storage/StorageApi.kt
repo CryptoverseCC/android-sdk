@@ -7,5 +7,5 @@ import retrofit2.http.POST
 internal interface StorageApi {
 
     @POST("storage")
-    fun call(@Body body: ClaimWrapper): Completable
+    fun call(@Body body: SignedClaimWrapper): Completable
 }
