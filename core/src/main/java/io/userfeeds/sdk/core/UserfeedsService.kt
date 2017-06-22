@@ -13,7 +13,10 @@ interface UserfeedsService {
 
     fun getAlgorithms(shareContext: ShareContext): Single<List<Algorithm>>
 
-    fun getRanking(shareContext: ShareContext, algorithm: Algorithm): Single<List<RankingItem>>
+    fun getRanking(
+            shareContext: ShareContext,
+            algorithm: Algorithm,
+            whitelist: String?): Single<List<RankingItem>>
 
     fun putClaim(
             shareContext: ShareContext,

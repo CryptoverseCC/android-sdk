@@ -15,8 +15,8 @@ internal object UserfeedsServiceImpl : UserfeedsService {
     override fun getAlgorithms(shareContext: ShareContext)
             = getAlgorithmsImpl(shareContext)
 
-    override fun getRanking(shareContext: ShareContext, algorithm: Algorithm)
-            = getRankingImpl(shareContext, algorithm)
+    override fun getRanking(shareContext: ShareContext, algorithm: Algorithm, whitelist: String?)
+            = getRankingImpl(shareContext, algorithm, whitelist)
 
     override fun putClaim(shareContext: ShareContext, type: List<String>, target: String, labels: List<String>?, client: String, keyPairHex: KeyPairHex)
             = putClaimImpl(shareContext, type, target, labels, client, keyPairHex)
