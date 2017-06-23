@@ -14,7 +14,7 @@ import java.math.BigDecimal
 
 internal object RetrofitProvider : Provider<Retrofit>({
     Retrofit.Builder()
-            .baseUrl("https://api.userfeeds.io/beta/api/")
+            .baseUrl("https://api.userfeeds.io/")
             .client(OkHttpClient.Builder()
                     .apply { if (UserfeedsSdk.debug) addInterceptor(HttpLoggingInterceptor().setLevel(BODY)) }
                     .build())
