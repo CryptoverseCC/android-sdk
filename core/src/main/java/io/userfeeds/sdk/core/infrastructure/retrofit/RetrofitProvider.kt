@@ -17,13 +17,6 @@ internal object RetrofitProvider : Provider<Retrofit>({
             .baseUrl("https://api.userfeeds.io/beta/api/")
             .client(OkHttpClient.Builder()
                     .apply { if (UserfeedsSdk.debug) addInterceptor(HttpLoggingInterceptor().setLevel(BODY)) }
-                    .addInterceptor {
-                        val newRequest = it.request()
-                                .newBuilder()
-                                .addHeader("Authorization", UserfeedsSdk.apiKey)
-                                .build()
-                        it.proceed(newRequest)
-                    }
                     .build())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
             .addConverterFactory(MoshiConverterFactory.create(Moshi.Builder()

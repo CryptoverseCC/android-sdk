@@ -1,9 +1,9 @@
 package io.userfeeds.sdk.core.storage
 
 import io.reactivex.Completable
-import io.userfeeds.sdk.core.signing.KeyPairHex
 import io.userfeeds.sdk.core.UserfeedsSdk
 import io.userfeeds.sdk.core.context.ShareContext
+import io.userfeeds.sdk.core.signing.KeyPairHex
 
 internal fun putClaimImpl(
         shareContext: ShareContext,
@@ -31,17 +31,15 @@ internal fun putClaimImpl(
             credits = claimWrapper.credits,
             signature = signature
     )
-    return StorageApiProvider.get().call(signedClaimWrapper)
+    return StorageApiProvider.get().call(UserfeedsSdk.apiKey, signedClaimWrapper)
 }
 
 private fun throwRequiredSigningModule(): Nothing {
-    throw Exception(
-            """
+    throw Exception("""
             |In order to use UserfeedsService.putClaim(...) you need to add signing dependency:
             |
             |dependencies {
             |    compile 'io.userfeeds.sdk:signing-sc:<latest version here>'
             |}
-            """
-    )
+            """.trimMargin())
 }
