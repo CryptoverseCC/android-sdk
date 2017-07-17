@@ -7,6 +7,6 @@ import retrofit2.http.POST
 
 internal interface StorageApi {
 
-    @POST("storage")
+    @POST("storage/")
     fun call(@Header("Authorization") apiKey: String, @Body body: SignedClaimWrapper): Completable
 }

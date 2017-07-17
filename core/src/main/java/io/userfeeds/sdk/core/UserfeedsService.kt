@@ -5,6 +5,7 @@ import io.reactivex.Single
 import io.userfeeds.sdk.core.algorithm.Algorithm
 import io.userfeeds.sdk.core.ranking.RankingItem
 import io.userfeeds.sdk.core.signing.KeyPairHex
+import io.userfeeds.sdk.core.storage.Claim
 
 interface UserfeedsService {
 
@@ -18,8 +19,7 @@ interface UserfeedsService {
     fun putClaim(
             context: RankingContext,
             type: List<String>,
-            target: String,
-            labels: List<String>?,
+            claim: Claim,
             client: String,
             keyPairHex: KeyPairHex): Completable
 

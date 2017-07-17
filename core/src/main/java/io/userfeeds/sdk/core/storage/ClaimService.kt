@@ -8,8 +8,7 @@ import io.userfeeds.sdk.core.signing.KeyPairHex
 internal fun putClaimImpl(
         context: RankingContext,
         type: List<String>,
-        target: String,
-        labels: List<String>?,
+        claim: Claim,
         client: String,
         keyPairHex: KeyPairHex): Completable {
     val claimSigner = try {
@@ -20,7 +19,7 @@ internal fun putClaimImpl(
     val claimWrapper = ClaimWrapper(
             context = context,
             type = type,
-            claim = Claim(target, labels),
+            claim = claim,
             credits = listOf(Credit("interface", client))
     )
     val signature = claimSigner.sign(claimWrapper, keyPairHex)

@@ -17,7 +17,12 @@ internal data class SignedClaimWrapper(
         val signature: ClaimSignature
 )
 
-data class Claim(val target: String, val labels: List<String>?)
+data class Claim(
+        val target: String,
+        val title: String? = null,
+        val summary: String? = null,
+        val labels: List<String>? = null
+)
 
 data class Credit(val type: String, val value: String)
 
