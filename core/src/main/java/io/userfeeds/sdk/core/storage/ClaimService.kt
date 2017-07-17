@@ -1,12 +1,12 @@
 package io.userfeeds.sdk.core.storage
 
 import io.reactivex.Completable
+import io.userfeeds.sdk.core.RankingContext
 import io.userfeeds.sdk.core.UserfeedsSdk
-import io.userfeeds.sdk.core.context.ShareContext
 import io.userfeeds.sdk.core.signing.KeyPairHex
 
 internal fun putClaimImpl(
-        shareContext: ShareContext,
+        context: RankingContext,
         type: List<String>,
         target: String,
         labels: List<String>?,
@@ -18,10 +18,10 @@ internal fun putClaimImpl(
         throwRequiredSigningModule()
     }
     val claimWrapper = ClaimWrapper(
-            shareContext.id,
-            type,
-            Claim(target, labels),
-            listOf(Credit("interface", client))
+            context = context,
+            type = type,
+            claim = Claim(target, labels),
+            credits = listOf(Credit("interface", client))
     )
     val signature = claimSigner.sign(claimWrapper, keyPairHex)
     val signedClaimWrapper = SignedClaimWrapper(

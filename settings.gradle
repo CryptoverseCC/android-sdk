@@ -1,1 +1,1 @@
-include ':core', ':ui', ':signing-sc'
+include ':core', ':signing-sc'

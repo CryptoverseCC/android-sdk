@@ -1,10 +1,10 @@
 package io.userfeeds.sdk.core.algorithm
 
 import io.reactivex.Single
-import io.userfeeds.sdk.core.context.ShareContext
+import io.userfeeds.sdk.core.RankingContext
 
-internal fun getAlgorithmsImpl(shareContext: ShareContext): Single<List<Algorithm>> {
+internal fun getAlgorithmsImpl(context: RankingContext): Single<List<Algorithm>> {
     return AlgorithmsApiProvider.get()
-            .call(shareContext.id)
+            .call(context)
             .map { it.items }
 }

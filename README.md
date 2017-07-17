@@ -52,7 +52,7 @@ class ContextsActivity : AppCompatActivity() {
                 .subscribe(this::onContexts, this::onError)
     }
 
-    private fun onContexts(contexts: List<ShareContext>) {
+    private fun onContexts(contexts: List<RankingContext>) {
         // ...
     }
 

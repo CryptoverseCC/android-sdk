@@ -1,14 +1,16 @@
 package io.userfeeds.sdk.core.storage
 
+import io.userfeeds.sdk.core.RankingContext
+
 data class ClaimWrapper(
-        val context: String,
+        val context: RankingContext,
         val type: List<String>,
         val claim: Claim,
         val credits: List<Credit>
 )
 
 internal data class SignedClaimWrapper(
-        val context: String,
+        val context: RankingContext,
         val type: List<String>,
         val claim: Claim,
         val credits: List<Credit>,
