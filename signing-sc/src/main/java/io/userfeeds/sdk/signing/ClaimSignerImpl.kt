@@ -25,7 +25,7 @@ internal object ClaimSignerImpl : ClaimSigner {
         val signatureByteArray = signature.sign()
         val signatureHex = signatureByteArray.toHexString()
         return ClaimSignature(
-                type = "SHA256withECDSA.secp256r1",
+                type = "ecdsa.prime256v1",
                 creator = keyPairHex.publicKey,
                 signatureValue = signatureHex
         )
