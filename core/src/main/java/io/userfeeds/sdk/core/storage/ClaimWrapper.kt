@@ -5,14 +5,14 @@ import io.userfeeds.sdk.core.RankingContext
 
 data class ClaimWrapper(
         val context: RankingContext,
-        val types: List<String>,
+        val type: List<String>,
         val claim: Claim,
         val credits: List<Credit>) {
 
     companion object {
 
-        fun create(context: RankingContext, types: List<String>, claim: Claim, clientId: String): ClaimWrapper {
-            return ClaimWrapper(context, types, claim, listOf(Credit("interface", clientId)))
+        fun create(context: RankingContext, type: List<String>, claim: Claim, clientId: String): ClaimWrapper {
+            return ClaimWrapper(context, type, claim, listOf(Credit("interface", clientId)))
         }
     }
 }

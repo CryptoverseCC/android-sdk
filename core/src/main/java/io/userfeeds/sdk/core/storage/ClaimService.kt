@@ -6,7 +6,7 @@ import io.userfeeds.sdk.core.UserfeedsSdk
 internal fun putClaimImpl(claimWrapper: ClaimWrapper, signature: Signature): Completable {
     val signedClaimWrapper = SignedClaimWrapper(
             context = claimWrapper.context,
-            type = claimWrapper.types,
+            type = claimWrapper.type,
             claim = claimWrapper.claim,
             credits = claimWrapper.credits,
             signature = signature
