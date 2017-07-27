@@ -4,8 +4,8 @@ import io.reactivex.Completable
 import io.reactivex.Single
 import io.userfeeds.sdk.core.algorithm.Algorithm
 import io.userfeeds.sdk.core.ranking.RankingItem
-import io.userfeeds.sdk.core.signing.KeyPairHex
 import io.userfeeds.sdk.core.storage.Claim
+import io.userfeeds.sdk.core.storage.Signature
 
 interface UserfeedsService {
 
@@ -20,8 +20,8 @@ interface UserfeedsService {
             context: RankingContext,
             type: List<String>,
             claim: Claim,
-            client: String,
-            keyPairHex: KeyPairHex): Completable
+            signature: Signature,
+            client: String): Completable
 
     companion object {
 
