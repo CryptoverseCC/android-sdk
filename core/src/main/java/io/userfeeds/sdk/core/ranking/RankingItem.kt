@@ -7,8 +7,10 @@ import io.userfeeds.sdk.core.common.readSerializableEx
 import java.math.BigDecimal
 
 data class RankingItem(
+        val id: String?,
         val target: String,
         val score: BigDecimal,
+        val total: BigDecimal?,
         val title: String?,
         val summary: String?)
     :
@@ -17,8 +19,10 @@ data class RankingItem(
     override fun describeContents() = 0
 
     override fun writeToParcel(dest: Parcel, flags: Int) {
+        dest.writeString(id)
         dest.writeString(target)
         dest.writeSerializable(score)
+        dest.writeSerializable(total)
         dest.writeString(title)
         dest.writeString(summary)
     }
@@ -29,6 +33,8 @@ data class RankingItem(
         val CREATOR = parcelableCreator {
             RankingItem(
                     readString(),
+                    readString(),
+                    readSerializableEx(),
                     readSerializableEx(),
                     readString(),
                     readString()
