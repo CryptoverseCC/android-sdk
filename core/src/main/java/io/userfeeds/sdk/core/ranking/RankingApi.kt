@@ -9,8 +9,8 @@ internal interface RankingApi {
 
     @GET("ranking/{recipientAddress}/{algorithm}/")
     fun call(
-            @Query("asset") asset: String,
             @Path("recipientAddress") recipientAddress: String,
             @Path("algorithm") algorithm: String,
+            @Query("asset") asset: String,
             @Query("whitelist") whitelist: String?): Single<RankingResponse>
 }
