@@ -8,9 +8,9 @@ import java.math.BigDecimal
 
 data class RankingItem(
         val id: String?,
-        val target: String,
         val score: BigDecimal,
         val total: BigDecimal?,
+        val target: String,
         val title: String?,
         val summary: String?)
     :
@@ -20,9 +20,9 @@ data class RankingItem(
 
     override fun writeToParcel(dest: Parcel, flags: Int) {
         dest.writeString(id)
-        dest.writeString(target)
         dest.writeSerializable(score)
         dest.writeSerializable(total)
+        dest.writeString(target)
         dest.writeString(title)
         dest.writeString(summary)
     }
@@ -33,9 +33,9 @@ data class RankingItem(
         val CREATOR = parcelableCreator {
             RankingItem(
                     readString(),
+                    readSerializableEx(),
+                    readSerializableEx(),
                     readString(),
-                    readSerializableEx(),
-                    readSerializableEx(),
                     readString(),
                     readString()
             )
